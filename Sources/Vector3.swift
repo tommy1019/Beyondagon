@@ -1,4 +1,6 @@
-struct Vector4 : Printable
+import Foundation
+
+struct Vector3 : CustomStringConvertible
 {
 	var x : Double
 	var y : Double
@@ -11,7 +13,7 @@ struct Vector4 : Printable
 		self.z = z
 	}
 
-	override var description: String {return "Vector3: \(x), \(y), \(z)"}
+	var description: String {return "Vector3: \(x), \(y), \(z)"}
 
 	static func + (left: Vector3, right: Vector3) -> Vector3
 	{
