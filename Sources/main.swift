@@ -20,6 +20,8 @@ let numPatches = Int(lines[0])!
 let numVectors = Int(lines[numPatches + 1])!
 print("Loading curve file with \(numPatches) patches and \(numVectors) vectors")
 
+var vectors = [Vector3]()
+
 for i in 0 ..< numVectors
 {
     let curLine = lines[numPatches + 2 + i].components(separatedBy: ",")
@@ -28,7 +30,8 @@ for i in 0 ..< numVectors
     let y = Double(curLine[1])!
     let z = Double(curLine[2])!
     
-    print("<\(x),\(y),\(z)>")
+    let vec = Vector3(x, y, z)
+    vectors.append(vec)
 }
 
 for i in 0 ..< numPatches
