@@ -36,5 +36,6 @@ for i in 0 ..< numVectors
 
 for i in 0 ..< numPatches
 {
-    print(i)
+    let patchVectors = lines[i + 1].components(separatedBy: ",").map{ vectors[Int($0)! - 1] }
+    print(patchVectors)
 }
