@@ -6,7 +6,7 @@ struct Vector3 : CustomStringConvertible
 	var y : Double
 	var z : Double
 
-	init(x : Double, y : Double, z : Double)
+	init(_ x : Double, _ y : Double, _ z : Double)
 	{
 		self.x = x
 		self.y = y
