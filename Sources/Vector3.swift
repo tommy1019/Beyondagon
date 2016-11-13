@@ -28,6 +28,11 @@ struct Vector3 : CustomStringConvertible
 				left.y - right.y,
 				left.z - right.z)
 	}
+    
+    static func * (left: Vector3, right: Vector3) -> Vector3
+    {
+        return Vector3(left.x * right.x, left.y * right.y, left.z * right.z)
+    }
 
 	static func * (left: Vector3, right: Double) -> Vector3
 	{
