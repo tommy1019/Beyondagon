@@ -17,16 +17,16 @@ struct Vector3 : CustomStringConvertible
 
 	static func + (left: Vector3, right: Vector3) -> Vector3
 	{
-		return Vector3( x: left.x + right.x,
-				y: left.y + right.y,
-				z: left.z + right.z)
+		return Vector3( left.x + right.x,
+				left.y + right.y,
+				left.z + right.z)
 	}
 
 	static func - (left: Vector3, right: Vector3) -> Vector3
 	{
-		return Vector3( x: left.x - right.x,
-				y: left.y - right.y,
-				z: left.z - right.z)
+		return Vector3( left.x - right.x,
+				left.y - right.y,
+				left.z - right.z)
 	}
 }
 
