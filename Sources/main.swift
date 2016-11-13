@@ -37,5 +37,16 @@ for i in 0 ..< numVectors
 for i in 0 ..< numPatches
 {
     let patchVectors = lines[i + 1].components(separatedBy: ",").map{ vectors[Int($0)! - 1] }
+    
+    let resolution = 4
+    
+    for u in 0 ..< resolution
+    {
+        for v in 0 ..< resolution
+        {
+            let resVector = pointOnPatch(controlPoints: patchVectors, at: Double(u), Double(v))
+        }
+    }
+    
     print(patchVectors)
 }
