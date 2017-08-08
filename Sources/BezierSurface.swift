@@ -1,11 +1,11 @@
 func pointOnCurve(controlPoints : [Vector3] , at t : Double) -> Vector3
 {
-    let b0 = (1 - t) * (1 - t) * (1 - t)
-    let b1 = 3 * t * (1 - t) * (1 - t)
-    let b2 = 3 * t * t * (1 - t)
-    let b3 = t * t * t;
+    let b0 = ((1 - t) * (1 - t) * (1 - t)) * controlPoints[0]
+    let b1 = (3 * t * (1 - t) * (1 - t)) * controlPoints[1]
+    let b2 = (3 * t * t * (1 - t)) * controlPoints[2]
+    let b3 = (t * t * t) * controlPoints[3]
     
-    return controlPoints[0] * b0 + controlPoints[1] * b1 + controlPoints[2] * b2 + controlPoints[3] * b3;
+    return b0 + b1 + b2 + b3
 }
 
 func pointOnPatch(controlPoints : [Vector3], at u : Double, _ v : Double) -> Vector3

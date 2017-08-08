@@ -69,7 +69,8 @@ for i in 0 ..< numVectors
     vectors.append(vec)
 }
 
-var modelString = ""
+var modelString = "vn 0 0 0\nvt 0 0\n"
+var faceString = ""
 var numFaces = 0
 var numVerticies = 0
 
@@ -114,8 +115,8 @@ for i in 0 ..< numPatches
             let f3 = (v + 1) * (resolution + 1) + u + 1
             let f4 = (v + 1) * (resolution + 1) + u
             
-            modelString += "f \(f1 + 1 + modelStart) \(f3 + 1 + modelStart) \(f2 + 1 + modelStart)\n"
-            modelString += "f \(f1 + 1 + modelStart) \(f4 + 1 + modelStart) \(f3 + 1 + modelStart)\n"
+            faceString += "f \(f1 + 1 + modelStart)/1/1 \(f3 + 1 + modelStart)/1/1 \(f2 + 1 + modelStart)/1/1\n"
+            faceString += "f \(f1 + 1 + modelStart)/1/1 \(f4 + 1 + modelStart)/1/1 \(f3 + 1 + modelStart)/1/1\n"
             
             numFaces += 2
         }
@@ -125,7 +126,7 @@ for i in 0 ..< numPatches
 //Write finished model to disk
 do
 {
-    try modelString.write(toFile: outputPath, atomically: false, encoding: String.Encoding.utf8)
+    try (modelString + faceString).write(toFile: outputPath, atomically: false, encoding: String.Encoding.utf8)
 }
 catch
 {
